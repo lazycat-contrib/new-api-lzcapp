@@ -16,8 +16,8 @@ application:
       backend: http://new-api:3000/
 services:
   new-api:
-    # calciumion/new-api:v0.9.9-patch.1
-    image: docker.1ms.run/calciumion/new-api:v0.9.9-patch.1
+    # calciumion/new-api:v0.9.9-patch.3
+    image: docker.1ms.run/calciumion/new-api:v0.9.9-patch.3
     ontainer_name: new-api
     command: --log-dir /app/logs
     environment:
