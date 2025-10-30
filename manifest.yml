@@ -1,6 +1,6 @@
 name: New API
-package: lazycat.community.app.new-api
-version: 0.9.9
+package: community.lazycat.app.new-api
+version: 0.9.14
 min_os_version: 1.3.8
 description: "AI模型接口管理与分发系统，支持将多种大模型转为统一格式调用，支持OpenAI、Claude等格式，可供个人或者企业内部管理与分发渠道使用，本项目基于One API二次开发"
 homepage: https://github.com/QuantumNous/new-api
@@ -16,8 +16,8 @@ application:
       backend: http://new-api:3000/
 services:
   new-api:
-    # calciumion/new-api:v0.9.9-patch.3
-    image: docker.1ms.run/calciumion/new-api:v0.9.9-patch.3
+    # calciumion/new-api:v0.9.14
+    image: docker.1ms.run/calciumion/new-api:v0.9.14
     ontainer_name: new-api
     command: --log-dir /app/logs
     environment:
