@@ -10,7 +10,7 @@ application:
 
 services:
   new-api:
-    image: docker.1ms.run/calciumion/new-api:v0.12.12
+    image: docker.1ms.run/calciumion/new-api:v1.0.0-rc.20
     command: --log-dir /app/logs
     environment:
       - REDIS_CONN_STRING=redis://redis
