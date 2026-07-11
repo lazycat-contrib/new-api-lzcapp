@@ -1,0 +1,39 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/new-api.lpk
+
+update:
+  strategy: publish
+  version_source:
+    type: image
+    image: new-api
+
+build:
+  run_buildscript: false
+
+images:
+  - id: new-api
+    target: service
+    service: new-api
+    source: docker.io/calciumion/new-api
+    channel: custom
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?$'
+    version_regex: '^v?(?P<version>\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?)$'
+    delivery:
+      mode: mirror
+      image_template: docker.1ms.run/calciumion/new-api:{tag}
+      require_digest_match: true
+
+stores:
+  official:
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: New API
+    summary: Published from GitHub Actions
