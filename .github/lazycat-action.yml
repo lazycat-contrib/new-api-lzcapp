@@ -9,6 +9,7 @@ project:
 
 update:
   strategy: publish
+  allow_downgrade: true
   version_source:
     type: image
     image: new-api
