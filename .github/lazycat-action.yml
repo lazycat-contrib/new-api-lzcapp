@@ -5,6 +5,7 @@ project:
   build_config: lzc-build.yml
   package_file: package.yml
   output: dist/new-api.lpk
+  target_arch: amd64
 
 update:
   strategy: publish
@@ -22,8 +23,8 @@ images:
     source: docker.io/calciumion/new-api
     channel: custom
     sort: semver
-    tag_regex: '^v?\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?$'
-    version_regex: '^v?(?P<version>\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?)$'
+    tag_regex: '^v?\d+\.\d+\.\d+(-(alpha|beta|rc|preview)\.\d+)?$'
+    version_regex: '^v?(?P<version>\d+\.\d+\.\d+(-(alpha|beta|rc|preview)\.\d+)?)$'
     delivery:
       mode: mirror
       image_template: docker.1ms.run/calciumion/new-api:{tag}
