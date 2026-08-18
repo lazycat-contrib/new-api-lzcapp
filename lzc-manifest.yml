@@ -8,8 +8,8 @@ application:
       backend: http://new-api:3000/
 services:
   new-api:
-    # upstream: docker.io/calciumion/new-api:v1.0.0-rc.24
-    image: docker.1ms.run/calciumion/new-api:v1.0.0-rc.24
+    # upstream: docker.io/calciumion/new-api:v1.0.0-rc.25
+    image: docker.1ms.run/calciumion/new-api:v1.0.0-rc.25
     command: --log-dir /app/logs
     environment:
       - REDIS_CONN_STRING=redis://redis
